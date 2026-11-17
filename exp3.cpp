@@ -16,8 +16,9 @@ public:
         cout<<"enter the price:";
         cin>>price;
         if(price<=0){
-            throw price;
+            cout<<"invalid price"<<endl;
         }
+        
     }
 
     void display(){
