@@ -5,20 +5,19 @@ using namespace std;
 class Publication{
 protected:
     string title;
-    int price;
+    float price;
 
 public:
     void getData(){
         cout<<"Enter the title:";
         cin>>ws;
         getline(cin,title);
-
         cout<<"enter the price:";
         cin>>price;
         if(price<=0){
-            cout<<"invalid price"<<endl;
-        }
-        
+        throw price;
+    }
+
     }
 
     void display(){
@@ -27,8 +26,8 @@ public:
     }
 
     void getZero(){
-        title = '0';
-        price = '0';
+    title = "0";
+    price = 0;
     }
 };
 
@@ -38,9 +37,9 @@ protected:
 public:
     void getBookData(){
         getData();
-        cout<<"Enter the pages:";
-        cin>>pages;
-        if(pages<=0){
+            cout<<"Enter the pages:";
+            cin>>pages;
+            if(pages<=0){
             throw pages;
         }
     }
@@ -52,13 +51,13 @@ public:
 
     void getBookZero(){
         getZero();
-        pages = '0';
+        pages = 0;
     }
 };
 
 class Tape:public Publication{
 protected:
-    int playTime;
+    float playTime;
 public :
     void getTapeData(){
         getData();
@@ -76,7 +75,7 @@ public :
 
     void getTapeZero(){
         getZero();
-        playTime = '0';
+        playTime = 0;
     }
 };
 int main(){
