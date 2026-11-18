@@ -61,9 +61,7 @@ public:
                 result.a[i][j] = a[i][j] + m.a[i][j]; 
             }
         }
-
         return result;
-
     }
 
     // Substraction of matrix
@@ -93,7 +91,7 @@ public:
             return result;
         }
         result.rows = rows;
-        result.cols = cols;
+        result.cols = m.cols;
 
         for(int i=0;i<result.rows;i++){
             for(int j=0;j<result.cols;j++){
